@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Каталог курсів</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>Каталог курсів</h1>
+  </header>
+
+  <div class="filters">
+    <input type="text" id="searchInput" placeholder="Пошук за назвою або інструктором..." oninput="filterCourses()">
+    <select id="levelFilter" onchange="filterCourses()">
+      <option value="">Фільтр за рівнем</option>
+      <option value="Beginner">Початковий</option>
+      <option value="Intermediate">Середній</option>
+      <option value="Advanced">Високий</option>
+    </select>
+    <select id="languageFilter" onchange="filterCourses()">
+      <option value="">Фільтр за мовою</option>
+      <option value="English">Англійська</option>
+      <option value="Ukrainian">Українська</option>
+    </select>
+    <select id="sortSelect" onchange="sortCourses()">
+      <option value="level">Сортувати за рівнем</option>
+      <option value="duration">Сортувати за тривалістю</option>
+    </select>
+  </div>
+
+  <table id="coursesTable">
+    <thead>
+      <tr>
+        <th>Код курсу</th>
+        <th>Назва курсу</th>
+        <th>Інструктор</th>
+        <th>Тривалість (години)</th>
+        <th>Рівень</th>
+        <th>Мова</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Дані курсів будуть тут -->
+    </tbody>
+  </table>
+
+  <div id="noResultsMessage" style="display: none;">Нічого не знайдено.</div>
+
+  <div id="courseModal" class="modal" style="display: none;">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <h2 id="modalCourseName"></h2>
+      <p id="modalCourseDescription"></p>
+      <ul id="modalSyllabus"></ul>
+    </div>
+  </div>
+
+
+  <script src="script.js"></script>
+</body>
+</html>
