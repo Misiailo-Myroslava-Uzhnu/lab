@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Каталог курсів</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>КАТАЛОГ КУРСІВ</h1>
+    </header>
+
+    <div class="filters">
+        <input type="text" id="searchInput" placeholder="Пошук за назвою або інструктором" />
+        <div class="filter-group">
+            <label for="levelFilter">Рівень складності:</label>
+            <select id="levelFilter">
+                <option value="">Виберіть рівень</option>
+                <option value="Початковий">Початковий</option>
+                <option value="Середній">Середній</option>
+                <option value="Високий">Високий</option>
+            </select>
+        </div>
+        <div class="filter-group">
+            <label for="languageFilter">Мова викладання:</label>
+            <select id="languageFilter">
+                <option value="">Виберіть мову</option>
+                <option value="Українська">Українська</option>
+                <option value="Англійська">Англійська</option>
+            </select>
+        </div>
+        <div class="filter-group">
+            <label for="sortOrder">Сортувати за:</label>
+            <select id="sortOrder">
+                <option value="level">Рівень складності</option>
+                <option value="duration">Тривалість</option>
+            </select>
+        </div>
+    </div>
+
+    <table id="coursesTable">
+        <thead>
+            <tr>
+                <th>Код курсу</th>
+                <th>Назва курсу</th>
+                <th>Інструктор</th>
+                <th>Тривалість</th>
+                <th>Рівень</th>
+                <th>Мова</th>
+            </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+
+    <div id="courseModal" class="modal">
+        <div class="modal-content">
+            <span id="closeModal" class="close">&times;</span>
+            <h2 id="courseName"></h2>
+            <p id="courseDescription"></p>
+            <h3>Тематика курсу:</h3>
+            <ul id="courseSyllabus"></ul>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024. Misiailo Miroslava</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
